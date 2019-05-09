@@ -1,0 +1,27 @@
+<h1>Create new recipe</h1>
+
+<form action="/new_recipe" method="post">
+  Fill in recipe information:<br>
+  <label for="r_name">Name:</label>
+  <br>
+  <input type="text" name="r_name" value=""><br>
+
+  <label for="r_description">Description:</label>
+  <br>
+  <textarea name="r_description" value=""></textarea>
+  <br>
+  <label for="prep_time">Preparation time (min):</label><br>
+  <input type="text" name="prep_time" value=""><br>
+
+  <label for="difficulty">Difficulty:</label>
+  <select name="difficulty">
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+  </select>
+  <br>
+  <input type="submit" value="Create my recipe">
+</form>
+<br>
+<br>
+<a href="/"><< Back</a>

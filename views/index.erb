@@ -1,0 +1,36 @@
+<h1>
+  WELCOME TO MY SUPER FANTASTIC
+  RECIPE SITE - <strong>EAT MY SHORTS!</strong>!
+</h1>
+<h2><%= Time.now %></h2>
+
+<h4><ol>
+  <% @recipes.each_with_index do |recipe, idx| %>
+    <li><a href="/recepies/<%= idx %>">
+      <%= recipe.name %> - <%= recipe.done_str == "1" ?  "[X]" : "[  ]" %></a>
+    </li>
+  <% end %>
+</ol></h4>
+
+
+<h3>What do you want to do?</h3>
+
+<h4><a href="/create">Create a new recipe</a></h4>
+<br>
+<h4>Destroy recipe</h4>
+<form action="/delete_recipe" method="post">
+  <label for="number">Number to delete:</label>
+  <input type="text" name="number" value="">
+  <input type="submit" value="Delete">
+</form>
+<br>
+<h4>Mark recipe as done</h4>
+<form action="/mark_recipe_done" method="post">
+  <label for="mark_num">Number to mark:</label>
+  <input type="text" name="mark_num" value="">
+  <input type="submit" value="Mark as read">
+'</form>
+"Import a recipe"
+
+
+

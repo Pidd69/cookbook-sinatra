@@ -1,0 +1,7 @@
+<h1>How to make <%= @recipe.name %></h1>
+
+<div><strong>Preparation time:</strong> <%= @recipe.prep_time %><br><strong>Difficulty:</strong> <%= @recipe.difficulty %><br><strong>Done: <%= @recipe.description == "1" ?  "[X]" : "[  ]" %></strong></div>
+<a href="/"><< Back</a>
+<br>
+<br>
+<h4><%= @recipe.description %></h4>
