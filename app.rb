@@ -23,8 +23,19 @@ get '/create' do
   erb :create
 end
 
+get '/import' do
+  erb :import
+end
+
 get '/layout' do
   erb :layout
+end
+
+post '/import_recipe' do
+  ingridient = params['ingridient']
+
+  #cookbook.remove_recipe(number)
+  #redirect "/import"
 end
 
 post '/new_recipe' do
