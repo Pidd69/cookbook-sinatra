@@ -4,6 +4,7 @@ require "pry-byebug"
 require "better_errors"
 require_relative 'data/cookbook'
 require_relative 'models/recipe'
+require_relative 'models/recipe_scraper'
 
 set :bind, '0.0.0.0'
 configure :development do
@@ -32,10 +33,11 @@ get '/layout' do
 end
 
 post '/import_recipe' do
-  ingridient = params['ingridient']
-
-  #cookbook.remove_recipe(number)
-  #redirect "/import"
+  ingredient = params['ingredient']
+  @new_recipes = RecipeScraper.get_recipes(ingredient)
+  #new_recipes.each { |rec| cookbook.add_recipe(rec) }
+  #@recipes = cookbook.all
+  redirect "/search_result"
 end
 
 post '/new_recipe' do

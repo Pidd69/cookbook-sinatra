@@ -1,0 +1,14 @@
+<h1>Search result</h1>
+
+<h4><ol>
+  <% @new_recipes.each_with_index do |recipe, idx| %>
+    <li><a href="/recepies/<%= idx %>">
+      <%= recipe.name %> - <%= recipe.done_str == "1" ?  "[X]" : "[  ]" %></a>
+    </li>
+  <% end %>
+</ol></h4>
+
+<h4>Select recipe to import</h4>
+<br>
+<br>
+<a href="/"><< Back</a>
